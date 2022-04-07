@@ -1,0 +1,9 @@
+{
+    "name": "@croquet/create-croquet-microverse-builder",
+    "version": "1.0.0",
+    "description": "Setup Croquet Microverse Builder Library",
+    "bin": "./index.js",
+    "publishConfig": {
+        "access": "public"
+    }
+}
