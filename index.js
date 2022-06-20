@@ -53,11 +53,11 @@ function main() {
     }
     
     function copyFiles() {
-        copyFolderRecursiveSync("node_modules/@croquet/microverse/behaviors", ".");
-        copyFolderRecursiveSync("node_modules/@croquet/microverse/assets", ".");
-        copyFolderRecursiveSync("node_modules/@croquet/microverse/worlds", ".");
-        copyFolderRecursiveSync("node_modules/@croquet/microverse/meta", ".");
-        copyFileSync("node_modules/@croquet/microverse/index.html", "./index.html");
+        copyFolderRecursiveSync("node_modules/@croquet/microverse-library/behaviors", ".");
+        copyFolderRecursiveSync("node_modules/@croquet/microverse-library/assets", ".");
+        copyFolderRecursiveSync("node_modules/@croquet/microverse-library/worlds", ".");
+        copyFolderRecursiveSync("node_modules/@croquet/microverse-library/meta", ".");
+        copyFileSync("node_modules/@croquet/microverse-library/index.html", "./index.html");
     }
     
     return new Promise((resolve, reject) => {
