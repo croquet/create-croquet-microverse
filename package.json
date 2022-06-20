@@ -1,6 +1,6 @@
 {
-    "name": "@croquet/create-croquet-microverse",
-    "version": "0.1.3",
+    "name": "create-croquet-microverse",
+    "version": "0.1.0",
     "author": "Croquet Corporation",
     "license": "Apache-2.0",
     "description": "The initializer for Croquet Microverse",
