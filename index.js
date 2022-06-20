@@ -41,7 +41,7 @@ function main() {
         // Copy
         if (fs.lstatSync(source).isDirectory()) {
             files = fs.readdirSync(source);
-            files.forEach(( file ) => {
+            files.forEach((file) => {
                 let curSource = path.join(source, file);
                 if (fs.lstatSync(curSource).isDirectory()) {
                     copyFolderRecursiveSync(curSource, targetFolder);
@@ -72,12 +72,12 @@ function main() {
     "watch-server": "npx watch-server"
   },
   "dependencies": {
-    "@croquet/microverse-library": "^0.1.0"
+    "@croquet/microverse-library": "^0.1.1"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
-    "@croquet/microverse-watch-server": "^1.0.5",
-    "@croquet/microverse-file-server": "^1.0.3"
+    "@croquet/microverse-watch-server": "^1.0.6",
+    "@croquet/microverse-file-server": "^1.0.4"
   }
 }`.trim(), {encoding: "utf8",
             flag: "w",
