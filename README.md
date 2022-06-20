@@ -12,7 +12,17 @@ This utility `create-croquet-microverse` allows you to set up a minimum working 
 
      npm init croquet-microverse
 
-The process copies some files into the top-level directory and sets things up. Then you can run:
+The process copies some files into the top-level directory and sets things up.
+
+Then, You need to obtain your Croquet API Key from [https://croquet.io/keys/](https://croquet.io/keys/), and edit the two properties called `apiKey` and `appId` in the `apiKey.js` file.
+
+```
+const apiKey = "paste your apiKey from croquet.io/keys";
+const appId = "type your own appId such as com.example.david.mymicroverse";
+export default {apiKey, appId};
+```
+
+Then you can run:
 
      npm start
 
