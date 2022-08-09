@@ -72,7 +72,7 @@ function main() {
     "watch-server": "npx watch-server"
   },
   "dependencies": {
-    "@croquet/microverse-library": "^0.1.2"
+    "@croquet/microverse-library": "0.1.6"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
@@ -90,7 +90,9 @@ function main() {
                resolve();
            });
     }).then(() => {
-        return new Promise((resolve, reject) => {
+        return Promise.resolve(true);
+        /*
+          new Promise((resolve, reject) => {
             fs.writeFile("./apiKey.js", `
 const apiKey = "paste your apiKey from croquet.io/keys";
 const appId = "type your own appId such as com.example.david.mymicroverse";
@@ -108,6 +110,7 @@ export default {apiKey, appId};
               resolve();
           });
         });
+        */
     }).then(() => {
         return execAndLog("npm install");
     }).then(() => {
