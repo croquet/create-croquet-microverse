@@ -51,7 +51,7 @@ function main() {
             });
         }
     }
-    
+
     function copyFiles() {
         copyFolderRecursiveSync("node_modules/@croquet/microverse-library/behaviors", ".");
         copyFolderRecursiveSync("node_modules/@croquet/microverse-library/assets", ".");
@@ -59,17 +59,17 @@ function main() {
         copyFolderRecursiveSync("node_modules/@croquet/microverse-library/meta", ".");
         copyFileSync("node_modules/@croquet/microverse-library/index.html", "./index.html");
     }
-    
+
     return new Promise((resolve, reject) => {
-        fs.writeFile("./package.json", `
-{
-  "name": "my-crqouet-microverse-world",
+        fs.writeFile("./package.json",
+`{
+  "name": "my-croquet-microverse-world",
   "version": "1.0.0",
   "description": "A World in Croquet Microverse",
   "scripts": {
-    "start": "npm-run-all --parallel file-server & npm run watch-server",
-    "file-server": "npx file-server --port 9684",
-    "watch-server": "npx watch-server"
+    "start": "npm-run-all --parallel file-server watch-server",
+    "file-server": "file-server --port 9684",
+    "watch-server": "watch-server"
   },
   "dependencies": {
     "@croquet/microverse-library": "0.1.6"
@@ -79,7 +79,8 @@ function main() {
     "@croquet/microverse-watch-server": "^1.0.6",
     "@croquet/microverse-file-server": "^1.0.4"
   }
-}`.trim(), {encoding: "utf8",
+}
+`, {encoding: "utf8",
             flag: "w",
             mode: 0o644
            }, (err) => {
