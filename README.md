@@ -12,25 +12,27 @@ This utility `create-croquet-microverse` allows you to set up a minimum working 
 
      npm init croquet-microverse
 
-The process copies some files into the top-level directory and sets things up.
+The process runs `npm install`, copies some files into the top-level directory to set things up.
 
-Then, You need to obtain your Croquet API Key from [https://croquet.io/keys/](https://croquet.io/keys/), and edit the two properties called `apiKey` and `appId` in the `apiKey.js` file.
+You then run
+
+     npm start
+
+. You can now point a web browser to `localhost:9684` to open the world.
+
+## Development
+
+A typical workflow is to modify the default world file `worlds/default.js`, and add behavior files to expand the world. You can add more asset files in the assets directory, or use the Croquet DataId to refer to more assets from your world.
+
+## Deployment
+
+You need to obtain your Croquet API Key from [https://croquet.io/keys/](https://croquet.io/keys/), create a file called `apiKey.js` and edit the two properties called `apiKey` and `appId` in the `apiKey.js` file.
 
 ```
 const apiKey = "paste your apiKey from croquet.io/keys";
 const appId = "type your own appId such as com.example.david.mymicroverse";
 export default {apiKey, appId};
 ```
-
-Then you can run:
-
-     npm start
-
-and from a web browser to open `localhost:9684` to open the world.
-
-You can then modify the default world file `worlds/default.js`, and add behavior files to expand the world. You can add more asset files in the assets directory, or use the Croquet DataId to refer to more assets from your world.
-
-## Deployment
 
 You can copy all files in `behaviors`, `assets`, `lib`, `meta`, and `worlds` along with `index.html` and `apiKey.js` to your publicly accessible HTTP server to have your own deployment. You can also use a hosting services such as Netlify and Vercel, which let you connect your GitHub repository to automate deployment. Note that the auto generated default apiKey for your Croquet account allows anybody to use it from any site.  In order to protect your API key from unauthorized use, you should create a new apiKey with URL restriction limited to your site.
 

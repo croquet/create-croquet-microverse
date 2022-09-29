@@ -16,50 +16,6 @@ function main() {
         }
     }
 
-    function copyFileSync(source, target) {
-        let targetFile = target;
-
-        // If target is a directory, a new file with the same name will be created
-        if (fs.existsSync(target)) {
-            if (fs.lstatSync(target).isDirectory()) {
-                targetFile = path.join(target, path.basename(source));
-            }
-        }
-
-        fs.writeFileSync(targetFile, fs.readFileSync(source));
-    }
-
-    function copyFolderRecursiveSync(source, target) {
-        let files = [];
-
-        // Check if folder needs to be created or integrated
-        let targetFolder = path.join(target, path.basename(source));
-        if (!fs.existsSync(targetFolder)) {
-            fs.mkdirSync(targetFolder);
-        }
-
-        // Copy
-        if (fs.lstatSync(source).isDirectory()) {
-            files = fs.readdirSync(source);
-            files.forEach((file) => {
-                let curSource = path.join(source, file);
-                if (fs.lstatSync(curSource).isDirectory()) {
-                    copyFolderRecursiveSync(curSource, targetFolder);
-                } else {
-                    copyFileSync(curSource, targetFolder);
-                }
-            });
-        }
-    }
-
-    function copyFiles() {
-        copyFolderRecursiveSync("node_modules/@croquet/microverse-library/behaviors", ".");
-        copyFolderRecursiveSync("node_modules/@croquet/microverse-library/assets", ".");
-        copyFolderRecursiveSync("node_modules/@croquet/microverse-library/worlds", ".");
-        copyFolderRecursiveSync("node_modules/@croquet/microverse-library/meta", ".");
-        copyFileSync("node_modules/@croquet/microverse-library/index.html", "./index.html");
-    }
-
     return new Promise((resolve, reject) => {
         fs.writeFile("./package.json",
 `{
@@ -72,7 +28,7 @@ function main() {
     "watch-server": "watch-server"
   },
   "dependencies": {
-    "@croquet/microverse-library": "0.1.12"
+    "@croquet/microverse-library": "0.1.13"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
@@ -92,30 +48,8 @@ function main() {
            });
     }).then(() => {
         return Promise.resolve(true);
-        /*
-          new Promise((resolve, reject) => {
-            fs.writeFile("./apiKey.js", `
-const apiKey = "paste your apiKey from croquet.io/keys";
-const appId = "type your own appId such as com.example.david.mymicroverse";
-export default {apiKey, appId};
-
-// you may export other Croquet session parameters to override default values.
-`.trim(), {encoding: "utf8",
-           flag: "w",
-           mode: 0o644
-          }, (err) => {
-              if (err) {
-                  console.log(err);
-                  return reject();
-              }
-              resolve();
-          });
-        });
-        */
     }).then(() => {
         return execAndLog("npm install");
-    }).then(() => {
-        copyFiles();
     });
 }
 
