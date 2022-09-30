@@ -16,6 +16,7 @@ function main() {
         }
     }
 
+    // you change the line below to "@croquet/microverse-library": "file:../microverse/dist" to test things locally
     return new Promise((resolve, reject) => {
         fs.writeFile("./package.json",
 `{
@@ -28,7 +29,7 @@ function main() {
     "watch-server": "watch-server"
   },
   "dependencies": {
-    "@croquet/microverse-library": "0.1.14"
+    "@croquet/microverse-library": "0.1.15"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
