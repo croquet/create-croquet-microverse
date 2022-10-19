@@ -20,6 +20,10 @@ You then run
 
 . You can now point a web browser to `localhost:9684` to open the world.
 
+When you would like to update the microverse-library to a new version (or check out an old version), you run (for example):
+
+    npm install @croquet/microverse-library@0.1.16
+
 ## Development
 
 A typical workflow is to modify the default world file `worlds/default.js`, and add behavior files to expand the world. You can add more asset files in the assets directory, or use the Croquet DataId to refer to more assets from your world.
