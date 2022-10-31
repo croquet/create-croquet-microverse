@@ -10,7 +10,7 @@ Croquet Microverse is a framework to build multiplayer immersive 3D virtual worl
 
 This utility `create-croquet-microverse` allows you to set up a minimum working installation by simply running the following in an empty directory:
 
-     npm init croquet-microverse
+     npm create croquet-microverse@latest
 
 The process runs `npm install`, copies some files into the top-level directory to set things up.
 
