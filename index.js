@@ -29,7 +29,7 @@ function main() {
     "watch-server": "watch-server"
   },
   "dependencies": {
-    "@croquet/microverse-library": "0.3.5"
+    "@croquet/microverse-library": "0.3.6"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
