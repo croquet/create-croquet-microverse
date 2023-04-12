@@ -22,7 +22,7 @@ You then run
 
 When you would like to update the microverse-library to a new version (or check out an old version), you run (for example):
 
-    npm install @croquet/microverse-library@0.1.16
+    npm install @croquet/microverse-library@0.4.4
 
 ## Development
 
