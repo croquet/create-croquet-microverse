@@ -29,13 +29,13 @@ function main() {
     "watch-server": "watch-server"
   },
   "dependencies": {
-    "@croquet/microverse-library": "0.7.14"
+    "@croquet/microverse-library": "0.7.15"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
     "@croquet/microverse-watch-server": "^1.0.7",
     "@croquet/microverse-file-server": "^1.0.7",
-    "@types/three": "0.155.0"
+    "@types/three": "0.159.0"
   }
 }
 `, {encoding: "utf8",
