@@ -1,6 +1,6 @@
 {
     "name": "create-croquet-microverse",
-    "version": "0.8.3",
+    "version": "0.8.4",
     "description": "The initializer for Croquet Microverse",
     "bin": {
         "create-croquet-microverse": "index.js"
